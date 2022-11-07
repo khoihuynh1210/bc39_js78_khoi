@@ -3,15 +3,15 @@
 const getQuery = (query = "") => document.querySelector(query);
 const arrNumber = [];
 
-getQuery("#btnThemso").onclick = () => {
+getQuery("#btn1").onclick = () => {
   arrNumber.push(parseInt(getQuery("#Nhap").value));
-  getQuery("#infoLogin1").innerHTML = arrNumber?.toString();
+  getQuery("#info1").innerHTML = arrNumber?.toString();
 };
 
 // 1 ( chỉ lấy số dương + với nhau)
-getQuery("#btnTinhTong").onclick = () => {
+getQuery("#btn2").onclick = () => {
   const total = arrNumber?.reduce((sum, x) => sum + x);
-  getQuery("#infoLogin2").innerHTML = total;
+  getQuery("#info2").innerHTML = total;
 };
 
 
@@ -21,9 +21,9 @@ getQuery("#btnTinhTong").onclick = () => {
 
 
 //2
-getQuery("#btnDem").onclick = () => {
+getQuery("#btn3").onclick = () => {
   const total = arrNumber?.filter((e) => e > 0);
-  getQuery("#infoLogin3").innerHTML = total.length;
+  getQuery("#info3").innerHTML = total.length;
 };
 
 
@@ -31,18 +31,18 @@ getQuery("#btnDem").onclick = () => {
 
 
 //3
-getQuery("#btnNhoNhat").onclick = () => {
+getQuery("#btn4").onclick = () => {
   const total = arrNumber?.sort((a, b) => a - b);
-  getQuery("#infoLogin4").innerHTML = total?.[0];
+  getQuery("#info4").innerHTML = total?.[0];
 };
 
 
 
 
 //4
-getQuery("#btnTim2").onclick = () => {
+getQuery("#btn5").onclick = () => {
   const total = arrNumber?.sort((a, b) => a - b)?.find((e) => e > 0);
-  getQuery("#infoLogin5").innerHTML = total;
+  getQuery("#info5").innerHTML = total;
 };
 
 
@@ -50,20 +50,20 @@ getQuery("#btnTim2").onclick = () => {
 
 
 //5 
-getQuery("#btnTimSoChan").onclick = () => {
+getQuery("#btn6").onclick = () => {
   const total = arrNumber?.reverse()?.find((e) => e % 2 === 0);
-  getQuery("#infoLogin6").innerHTML = total;
+  getQuery("#info6").innerHTML = total;
 };
 
 
 
 
 //6
-getQuery("#btnDoiCho").onclick = () => {
+getQuery("#btn7").onclick = () => {
   const index1 = parseInt(getQuery("#Vitri1").value);
   const index2 = parseInt(getQuery("#Vitri2").value);
   arrNumber[index1] = arrNumber?.splice(index2, 1, arrNumber[index1])[0];
-  getQuery("#infoLogin7").innerHTML = arrNumber?.toString();
+  getQuery("#info7").innerHTML = arrNumber?.toString();
 };
 
 
@@ -71,8 +71,8 @@ getQuery("#btnDoiCho").onclick = () => {
 
 
 //7
-getQuery("#btnSapXep").onclick = () => {
-  getQuery("#infoLogin8").innerHTML = arrNumber?.sort()?.toString();
+getQuery("#btn8").onclick = () => {
+  getQuery("#info8").innerHTML = arrNumber?.sort()?.toString();
 };
 
 
@@ -93,20 +93,20 @@ const checkSNT = (number) => {
   return true;
 };
 
-getQuery("#btnNguyenTo").onclick = () => {
+getQuery("#btn9").onclick = () => {
   const snt = arrNumber?.find((e) => checkSNT(e));
-  getQuery("#infoLogin9").innerHTML = snt;
+  getQuery("#info9").innerHTML = snt;
 };
 
 //9
 const arrNumber2 = [];
-getQuery("#btnSoNguyen1").onclick = () => {
+getQuery("#btn10").onclick = () => {
   arrNumber2.push(getQuery("#SoNguyen1").value);
   getQuery("#listArrNumber2").innerHTML = arrNumber2?.toString();
 };
-getQuery("#btnSoNguyen2").onclick = () => {
+getQuery("#btn11").onclick = () => {
   const number = arrNumber2.filter((e) => Number.isInteger(parseFloat(e)));
-  getQuery("#infoLogin10").innerHTML = number?.length;
+  getQuery("#info10").innerHTML = number?.length;
 };
 
 
@@ -114,10 +114,10 @@ getQuery("#btnSoNguyen2").onclick = () => {
 
 
 //10
-getQuery("#btnSoSanh").onclick = () => {
+getQuery("#btn12").onclick = () => {
   const even = arrNumber?.filter((e) => e >= 0);
   console.log({a: arrNumber?.length - even > arrNumber?.length / 2});
-  getQuery("#infoSoSanh").innerHTML =
+  getQuery("#info11").innerHTML =
     arrNumber?.length / 2 === even?.length
       ? "so luong bang nhau"
       : arrNumber?.length - even?.length > arrNumber?.length / 2
